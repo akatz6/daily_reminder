@@ -1,0 +1,12 @@
+<div ng-controller="welcomeController"> 
+  	<h1>Welcome {{name}} !</h1>
+	<a href="" ng-click="add_todo()" >Add to To Do list</a>
+	<p>Your list for {{today}}</p>
+		<table>
+			<tbody ng-repeat = "list in lists">
+				<td>{{list.item}}</td>
+				<td><button ng-click = update(list._id)>Update</button>
+					<button ng-click = delete(list._id)>Delete</button></td>
+			</tbody>
+		</table>
+</div>

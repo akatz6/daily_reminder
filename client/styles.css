@@ -1,0 +1,22 @@
+div.album{
+	float:left;
+    width:25%; 
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+div.description{
+	padding: 15px;
+}
+
+input[type-test]{
+	padding: 3px;
+	border-radius: 4px;
+	border: 1px solid black 
+}
+
+textarea{
+	padding: 3px;
+	border-radius: 4px;
+	border: 1px solid black 
+}

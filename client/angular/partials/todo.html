@@ -1,0 +1,11 @@
+<div ng-controller="todoController"> 
+
+	<label>Date</label>
+	<input type="date" ng-model="todo.date">
+	<label>To Do</label>
+	<textarea ng-model='todo.item'></textarea>
+	<p ng-if=correct>Data was submitted</p>
+	<p ng-if=incorrect>You are missing data</p>
+	<button ng-click = submit()>Submit</button>
+	<button ng-click = return()>Return To List</button>
+</div>

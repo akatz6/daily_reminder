@@ -1,0 +1,10 @@
+<div ng-controller="updateController"> 
+
+	<label>Date</label>
+	<input type="date" ng-model="date">
+	<label>To Do</label>
+	<textarea ng-model='item'></textarea>
+	<p ng-if=correct>Data was submitted</p>
+	<p ng-if=incorrect>You are missing data</p>
+	<button ng-click = submit()>Submit</button>
+</div>
