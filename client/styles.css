@@ -1,22 +1,46 @@
-div.album{
-	float:left;
-    width:25%; 
-	margin-right: 10px;
-	margin-bottom: 10px;
+div.user{
+	width: 10%;
+	padding: 10px;
+	background: red; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left top, #043B6B, #11558E); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom right, #043B6B, #11558E); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom right, #043B6B, #11558E); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #043B6B, #11558E); /* Standard syntax */
 }
+	h3.test{
+		color: #FFFFF6;
+		text-align: center;
+	}
 
-div.description{
-	padding: 15px;
-}
+	input[type="text"] {
+		display: block;
+		margin : 0 auto;
+	}
 
-input[type-test]{
-	padding: 3px;
-	border-radius: 4px;
-	border: 1px solid black 
-}
+	input[type="submit"] {
+		display: block;
+		margin-left: 10%;
+		margin-top: 5%;
+	}
 
-textarea{
-	padding: 3px;
-	border-radius: 4px;
-	border: 1px solid black 
+	p.user{
+		text-align: center;
+	}
+
+div.todo{
+	width: 10%;
+	border: 1px solid black;
+	padding-left: 10px;
+	background: red; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left top, #043B6B, #11558E); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom right, #043B6B, #11558E); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom right, #043B6B, #11558E); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, white, black);
 }
+	button.submit{
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+
+

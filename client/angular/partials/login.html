@@ -1,9 +1,11 @@
 <div ng-controller="userController"> 
-	<form>
-		<p>Name</p>
-		<input ng-model="user" type="text">
-		<input type="submit" value="Login" ng-click="login()" >
-		<p ng-if="name">Please enter a name</p>
-	</form>
+	<div class=user>
+		<form>
+			<h3 class = "test">Name</h3>
+			<input ng-model="user" type="text">
+			<input type="submit" value="Login" ng-click="login()" >
+			<p class = "user" ng-if="name">Please enter a name</p>
+		</form>
+	</div>
 </div>
 		
