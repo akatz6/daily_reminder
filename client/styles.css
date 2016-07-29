@@ -1,13 +1,15 @@
 div.user{
 	width: 10%;
 	padding: 10px;
-	background: red; /* For browsers that do not support gradients */
-	background: -webkit-linear-gradient(left top, #043B6B, #11558E); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(bottom right, #043B6B, #11558E); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(bottom right, #043B6B, #11558E); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(to bottom right, #043B6B, #11558E); /* Standard syntax */
+	background: red; 
+	background: -webkit-linear-gradient(left top, #043B6B, green); 
+	background: -o-linear-gradient(bottom right, #043B6B, green);
+	background: -moz-linear-gradient(bottom right, #043B6B, green); 
+	background: linear-gradient(to bottom right, #043B6B, green); 
+	display: inline-block;
+	margin-right: 35%;
 }
-	h3.test{
+	h3.login_page{
 		color: #FFFFF6;
 		text-align: center;
 	}
@@ -23,6 +25,13 @@ div.user{
 		margin-top: 5%;
 	}
 
+
+	input[type="password"] {
+		display: block;
+		margin : 0 auto;
+		margin-top: 5px;
+	}
+
 	p.user{
 		text-align: center;
 	}
@@ -31,10 +40,10 @@ div.todo{
 	width: 10%;
 	border: 1px solid black;
 	padding-left: 10px;
-	background: red; /* For browsers that do not support gradients */
-	background: -webkit-linear-gradient(left top, #043B6B, #11558E); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(bottom right, #043B6B, #11558E); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(bottom right, #043B6B, #11558E); /* For Firefox 3.6 to 15 */
+	background: red; 
+	background: -webkit-linear-gradient(left top,  white, black); 
+	background: -o-linear-gradient(bottom right,  white, black); 
+	background: -moz-linear-gradient(bottom right, white, black); 
 	background: linear-gradient(to bottom right, white, black);
 }
 	button.submit{

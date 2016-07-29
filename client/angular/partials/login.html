@@ -1,11 +1,32 @@
 <div ng-controller="userController"> 
 	<div class=user>
-		<form>
-			<h3 class = "test">Name</h3>
-			<input ng-model="user" type="text">
+		<form name="login_form">
+			<h2 class>Login</h2>
+			<h3 class = "login_page">UserName</h3>
+			<input ng-model="user" type="text" ng-minlength="1" required>
+			<h3 class = "login_page">Password</h3>
+			<input ng-model="password" type="password" name="password" ng-minlength="4" required>
 			<input type="submit" value="Login" ng-click="login()" >
-			<p class = "user" ng-if="name">Please enter a name</p>
+			<div ng-if ="login_form.$submitted" ng-messages="login_form.password.$error" style="color:maroon" role="alert">
+				<div ng-message="minlength">Your field is too short</div>
+			</div>
+		</form>
+	</div>
+	<div class=user>
+		<form name = "register_form">
+			<h2 class>Register</h2>
+			<h3 class = "login_page">UserName</h3>
+			<input ng-model="reg.name" type="text">
+			<h3 class = "login_page">Password</h3>
+			<input ng-model="reg.password" type="password">
+			<input type="submit" value="Register" ng-click="register()" >
+			<div ng-if ="login_form.$submitted" ng-messages="login_form.password.$error" style="color:maroon" role="alert">
+				<div ng-message="minlength">Your field is too short</div>
+			</div>
+			<p ng-if="duplicate">That user name is taken, please choose another</p>
+			<p ng-if="correct">That user name is taken, please choose another</p>
 		</form>
 	</div>
 </div>
+
 		

@@ -1,11 +1,24 @@
 var mongoose = require('mongoose'),
 Todo = mongoose.model('Todo');
+Login = mongoose.model('Login');
+var bcrypt = require('bcrypt');
 var name = ""
 
 module.exports = (function(){
   return {
   	save_name:function(req, res){
   		req.session.user = req.body.user
+      bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(8));
+      Login.findOne({name: req.body.user, password:bcrypt.genSaltSync(8),
+        function(err){
+          if(err){
+            res.json({'error': true});
+          } else {
+            res.json({'sucess': true});
+          }
+        }
+      })
+//to do implenent log in
   		res.json({'user': req.session.user})
   	}, //end of save name method
   	return_name:function(req, res){
@@ -76,7 +89,22 @@ module.exports = (function(){
           })
         }
       })
-
+    }, // enf of update item function
+    register:function(req, res){
+      bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(8));
+      console.log(bcrypt.genSaltSync(8))
+      login = new Login({
+        name:req.body.user,
+        password: bcrypt.genSaltSync(8)
+      })
+      login.save(function(err){
+        if(err){
+          console.log(err)
+          res.json({'error': true});
+        } else {
+          res.json({'sucess': true})
+        }
+      })
     }
   }
 

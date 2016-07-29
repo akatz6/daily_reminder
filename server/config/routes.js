@@ -8,4 +8,5 @@ module.exports = function(app){
 	app.post('/deleteOne', user.delete_one)
 	app.post('/get_item', user.get_item)
 	app.post('/update_item', user.update_item)
+	app.post('/register', user.register)
 }
