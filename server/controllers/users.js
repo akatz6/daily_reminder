@@ -17,23 +17,21 @@ module.exports = (function(){
         date: req.body.date,
         item: req.body.item,
       })
-      console.log("this is the list: ", todo)
       todo.save(function(err){
-        console.log("trying to save: ", todo);
         if(err){
           console.log("In the error statement",err)
           res.json({"error": true});
         } 
         else {
-          console.log("success")
            res.json({"success": true});
         }
       })
-   
-      console.log("End of method")
     },// end of submit method
     get_list:function(req, res){
-      Todo.find({name:req.session.user}, function(err, user){
+      var date = new Date()
+      date.setHours(0,0,0,0)
+      console.log(date)
+      Todo.find({name:req.session.user, date:date}, function(err, user){
         if(err){
           res.json({"error": true})
         } else {

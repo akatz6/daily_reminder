@@ -13,7 +13,6 @@ app.controller('welcomeController', ['$scope', '$location', 'welcomeFactory',fun
 	get_todo = function(){
 		welcomeFactory.get_all(function(returned_data){
 			$scope.lists = returned_data.data.user
-			console.log($scope.lists)
 		})
 	}
 	index();
@@ -31,7 +30,6 @@ app.controller('welcomeController', ['$scope', '$location', 'welcomeFactory',fun
 	}
 	$scope.delete = function(id){
 		welcomeFactory.deleteOne(id, function(returned_data){
-			console.log(returned_data)
 			index();
 			date();
 			get_todo();

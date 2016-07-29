@@ -2,7 +2,8 @@
 	<form>
 		<p>Name</p>
 		<input ng-model="user" type="text">
-		<input type="submit" value="Login" ng-click="login()">
+		<input type="submit" value="Login" ng-click="login()" >
+		<p ng-if="name">Please enter a name</p>
 	</form>
 </div>
 		
