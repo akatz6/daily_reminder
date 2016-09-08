@@ -9,6 +9,9 @@ div.user{
 	display: inline-block;
 	margin-right: 35%;
 }
+	form{
+		display: inline-block;
+	}
 	h3.login_page{
 		color: #FFFFF6;
 		text-align: center;
@@ -45,6 +48,7 @@ div.todo{
 	background: -o-linear-gradient(bottom right,  white, black); 
 	background: -moz-linear-gradient(bottom right, white, black); 
 	background: linear-gradient(to bottom right, white, black);
+	
 }
 	button.submit{
 		margin-top: 5px;
