@@ -1,8 +1,11 @@
 app.controller('userController', ['$scope', '$location', 'userFactory',function($scope, $location, userFactory){
 	$scope.login = function(){
 		userFactory.login($scope.user, $scope.password, function(sendUser){
-			console.log($scope.success)
-			$location.url('/logged_in');
+			if(!sendUser.data.error){
+				$location.url('/logged_in');
+			}else {
+				$scope.error = true;
+			}		
 		})
 		
 	}

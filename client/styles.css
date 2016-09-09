@@ -1,16 +1,25 @@
+.root{
+  display: table;
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+}
+
 div.user{
-	width: 10%;
-	padding: 10px;
+display: inline-table;
+    width: 30%;
+    height: 370px;
+    padding: 0px;
+    margin-right: 20%;
 	background: red; 
 	background: -webkit-linear-gradient(left top, #043B6B, green); 
 	background: -o-linear-gradient(bottom right, #043B6B, green);
 	background: -moz-linear-gradient(bottom right, #043B6B, green); 
 	background: linear-gradient(to bottom right, #043B6B, green); 
-	display: inline-block;
-	margin-right: 35%;
+
 }
 	form{
-		display: inline-block;
+	
 	}
 	h3.login_page{
 		color: #FFFFF6;
@@ -23,7 +32,7 @@ div.user{
 	}
 
 	input[type="submit"] {
-		display: block;
+	
 		margin-left: 10%;
 		margin-top: 5%;
 	}
@@ -54,6 +63,10 @@ div.todo{
 		margin-top: 5px;
 		margin-bottom: 5px;
 	}
+
+
+
+
 
 
 

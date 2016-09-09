@@ -6,19 +6,18 @@ var name = ""
 
 module.exports = (function(){
   return {
-  	save_name:function(req, res){
-  		req.session.user = req.body.user
-      bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(8));
-      Login.findOne({name: req.body.user, password:bcrypt.genSaltSync(8),
-        function(err){
-          if(err){
-            res.json({'error': true});
-          } else {
-            res.json({'sucess': true});
-          }
-        }
-      })
-  		res.json({'user': req.session.user})
+  	save_name: function(req, res) {
+    req.session.user = req.body.user;
+    Login.findOne({ name: req.body.user },
+                  function(err, user) {
+      if (err)
+        return res.json({ error: true });
+      bcrypt.compare(req.body.password,
+                     user.password,
+                     function(err, valid) {
+        res.json({ error: !!(err || !valid) }); 
+      });
+    });
   	}, //end of save name method
   	return_name:function(req, res){
   		res.json({'user': req.session.user})
@@ -90,19 +89,17 @@ module.exports = (function(){
       })
     }, // end of update item function
     register:function(req, res){
-      bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(8));
-      console.log(bcrypt.genSaltSync(8))
+    bcrypt.hash(req.body.password, 8, function(err, hash) {
+      if (err)
+        return res.json({ error: true });
       login = new Login({
-        name:req.body.user,
-        password: bcrypt.genSaltSync(8)
+        name: req.body.user,
+        password: hash
       })
-      login.save(function(err){
-        if(err){
-          res.json({'error': true});
-        } else {
-          res.json({'sucess': true})
-        }
+      login.save(function(err) {
+        res.json({ error: !!err });
       })
+    });
     } // end of register user function
   } 
 })();
