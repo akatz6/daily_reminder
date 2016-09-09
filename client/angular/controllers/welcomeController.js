@@ -1,14 +1,17 @@
 app.controller('welcomeController', ['$scope', '$location', 'welcomeFactory',function($scope, $location, welcomeFactory){
 	index = function(){
 		welcomeFactory.get_name(function(returned_data){
+			if(!returned_data.data.user){
+				$location.url('/')
+			}
 			$scope.name = returned_data.data.user
-			})
+		})
 	}
 	date = function(){
 		welcomeFactory.get_name(function(returned_data){
 			var today = new Date;
 			$scope.today = today.toDateString();
-			})
+		})
 	}
 	get_todo = function(){
 		welcomeFactory.get_all(function(returned_data){

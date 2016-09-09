@@ -9,4 +9,5 @@ module.exports = function(app){
 	app.post('/get_item', user.get_item)
 	app.post('/update_item', user.update_item)
 	app.post('/register', user.register)
+	app.get('/clear_name', user.clear_name)
 }

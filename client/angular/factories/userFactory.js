@@ -12,6 +12,11 @@ app.factory('userFactory', ['$http', function($http){
 				callback(retuned_data)
 			})
 		}
+		this.set_name = function(callback){
+			$http.get('/clear_name').then(function(returned_data){
+				callback(returned_data)
+			})
+		}
 	}
 	return new UserFactory();
 }]);

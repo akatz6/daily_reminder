@@ -1,4 +1,9 @@
 app.controller('userController', ['$scope', '$location', 'userFactory',function($scope, $location, userFactory){
+	index = function(){
+		userFactory.set_name(function(returned_data){
+		})
+	}
+	index();
 	$scope.login = function(){
 		userFactory.login($scope.user, $scope.password, function(sendUser){
 			if(!sendUser.data.error){
@@ -6,8 +11,7 @@ app.controller('userController', ['$scope', '$location', 'userFactory',function(
 			}else {
 				$scope.error = true;
 			}		
-		})
-		
+		})	
 	}
 	$scope.register = function(){
 		userFactory.register($scope.reg.name, $scope.reg.password, function(sendUser){
